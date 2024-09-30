@@ -20,13 +20,14 @@ const Principal = () => {
   }, []);
 
   if (!userData) {
-    return <div>Carregando...</div>;
+    return <div>Bem vindo !</div>;
   }
 
   return (
     <div>
-      <h2>Bem-vindo, {userData.nome} {userData.sobrenome}</h2>
+      <h2>Bem-vindo, {userData.nome} {userData.sobrenome}!</h2>
       <p>Data de Nascimento: {userData.dataNascimento}</p>
+      <p>Estamos felizes em tê-lo aqui! Explore suas opções e aproveite ao máximo nossa plataforma.</p>
     </div>
   );
 };
