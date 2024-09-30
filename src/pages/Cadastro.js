@@ -33,8 +33,13 @@ const Cadastro = () => {
       alert('Usuário cadastrado com sucesso!');
       navigate('/'); // Navega para a tela de login após o cadastro bem-sucedido
     } catch (error) {
-      console.error('Erro ao cadastrar usuário:', error.message);
-      alert(`Erro ao cadastrar usuário: ${error.message}`);
+      if (error.code) {
+        console.error('Erro ao cadastrar usuário:', error.code, error.message);
+        alert(`Erro ao cadastrar usuário: ${error.message}`);
+      } else {
+        console.error('Erro desconhecido:', error);
+        alert('Erro desconhecido. Tente novamente mais tarde.');
+      }
     }
   };
 
